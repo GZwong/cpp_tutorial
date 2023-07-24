@@ -57,9 +57,11 @@ These are the steps to intall a GDB (GNU Debugger):
 ### CMake
 
 ## (Optional) Understanding VS Code
+VS Code is probably the most difficult IDE to setup due to its customizability. It can be the most powerful if you know what you are doing!
+
 - VS Code Tasks Options (<u>task.json</u>)
 
-    - Previously, to build the program, you either went to **terminal -> Run Build Task** or pressed **Ctrl+Shift+B**. Now, go to **terminal -> Configure Tasks**. This will open a <u>tasks.json</u> file under your <u>.vscode</u> folder. This <u>.json</u> file defines what happens when you click on **terminal -> Run Task**. This task can simply be to build the application (Run Build Task). Users can also change the <u>task.json</u> file so that **Run Task** not only build the application, but also run the executable subsequently, by changing the "command field" within the <u>task.json</u> file.
+    - Previously, to build the program, you either went to **terminal -> Run Build Task** or pressed **Ctrl+Shift+B**. Now, go to **Terminal -> Configure Tasks**. This will open a <u>tasks.json</u> file under your <u>.vscode</u> folder. This <u>.json</u> file defines what happens when you click on **Terminal -> Run Task**. This task can simply be to build the application (Run Build Task). Users can also change the <u>task.json</u> file so that **Run Task** not only build the application, but also run the executable subsequently, by changing the "command field" within the <u>task.json</u> file.
     - The <u>task.json</u> essentially stores this configuration of the user's tasks, so that it will remember how you want to run your task when you click on **Run Task**.
 
 ###
