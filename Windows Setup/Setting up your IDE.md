@@ -55,6 +55,25 @@ These are the steps to intall a GDB (GNU Debugger):
 5. This will create a <u>launch.json</u> file which stores your debugging configuration - you do not have to choose the debugger everytime you click on **Run & Debug**!
 
 ### CMake
+Background: Since C/C++ are compiled languages, building an executable involves two steps:
+1. Compile .c/.cpp files as object files
+```
+g++ -o helloworld -c helloworld.cpp
+```
+2. Link the object files as a final executable.
+```
+g++ -o program obj_file1.o obj_file2
+```
+This can be cumbersome to run everytime we want to compile and build the executable. 
+We can produce **makefiles** to automate the compilation and build process. 
+
+**CMake offers another level of abstraction on top of makefiles. It essentially automates the creation of makefiles, taking care of dependencies such as those included via git submodules.**
+
+CMake is able to create Visual Studio solution (.sln) files on Windows or MakeFiles on Mac/Linux. Though on windows, it can be configured to create MakeFiles instead by specifying the CMake generator by running the command below within the build directory (the ".." argument signifies that the top-level CMakeLists.txt is one directory higher):
+```
+cmake -G "Unix Makefiles" -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang ++ ..
+```
+
 
 ## (Optional) Understanding VS Code
 - VS Code Tasks Options (<u>task.json</u>)
