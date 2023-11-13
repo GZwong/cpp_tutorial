@@ -9,12 +9,10 @@ A compiler is needed to translate your written C++ source codes into machine cod
 Clang is the compiler front-end that handles C++ and integrates with LLVM backend infrastructure. It is known for short execution times and informative error messages,
 </details>
 
-
 <details>
 <summary>2. GCC (GNU Compiler Collection)</summary>
-Perhaps the most widely used compiler.
+The recommended option - it is the most widely used compiler.
 </details>
-
 
 <details>
 <summary>3. MSVC </summary>
@@ -27,10 +25,11 @@ Stands for Microsoft Visual C++, this easily integrates into Visual Studio and i
 1. Install [MYSYS2](https://www.msys2.org/). This is a software distribution and building platform on Windows. We need this to install MinGW, which is a compiler collection that allow you to install g++ (GNU) and clang++ (Clang).
 
 2. Open MYSYS2, and run the following command:
-```commandline
-pacman -Syu
-pacman S mingw-w64-x86_64-clang
-pacman -S mingw-w64-x86_64-clang-tools-extra
+```bash
+$ pacman -Syu
+$ pacman -S mingw-w64-ucrt-x86_64-gcc
+$ pacman -S mingw-w64-x86_64-clang
+$ pacman -S mingw-w64-x86_64-clang-tools-extra
 ```
 
 3. Add the binary (bin) file to system variable path to ensure your system can find the compiler.
@@ -38,6 +37,14 @@ pacman -S mingw-w64-x86_64-clang-tools-extra
     - Copy the directory of the bin file and add it as a system PATH. Under default conditions, this is: <u> C:\msys64\mingw64\bin </u>.
 
 4. Verify that installation is correct by opening command prompt and running the command below. It should print the compiler version installed.
-```
+```bash
+gcc --version
 clang++ --version
 ```
+
+## Installing MSVC
+
+MSVC is part of the Visual Studio Build Tools. Install it from [this page](https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools).
+
+After installation, locate the `msbuid` executable and add it to your path - it
+will be in a place something like `C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\`
